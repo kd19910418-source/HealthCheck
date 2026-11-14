@@ -213,9 +213,10 @@ p {
 }
 
 #diagnosis_button input {
-  padding: 0.5rem 1rem;
+  padding: 0.2rem 1rem;
   margin: 1rem;
   font-size: 16px;
+  font-weight: bold;
   cursor: pointer;
 }
 
