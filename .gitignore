@@ -32,7 +32,6 @@ build/
 ### VS Code ###
 .vscode/
 /bin/
-# Node.js
 node_modules/
 # Node.js / Prettier
 node_modules/

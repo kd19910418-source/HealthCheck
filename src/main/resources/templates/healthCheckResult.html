@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <title>健康診断アプリ</title>
+</head>
+<body>
+    <header>
+        <h1>健康診断アプリ</h1>
+    </header>
+
+    <div id="main_container">
+        <main>
+            <h2>健康診断の結果</h2>
+
+            <div class="container">
+                <p>身長：<span th:text="${health.height}"></span><br></p>
+
+                <p>体重：<span th:text="${health.weight}"></span><br></p>
+
+                <p>BMI：
+                    <span th:text="${#numbers.formatDecimal(health.bmi, 1, 2)}"></span>
+                    <br>
+                </p>
+
+                <p>体格：<span th:text="${health.bodyType}"></span></p>
+            </div>
+        </main>
+    </div>
+
+    <footer>
+        <div><a th:href="@{/HealthCheck}">トップページ</a></div>
+    </footer>
+</body>
+</html>
