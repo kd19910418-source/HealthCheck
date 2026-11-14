@@ -8,4 +8,5 @@ import lombok.Data;
 public class Health implements Serializable {
 	private double height, weight, bmi;
 	private String bodyType;
+
 }

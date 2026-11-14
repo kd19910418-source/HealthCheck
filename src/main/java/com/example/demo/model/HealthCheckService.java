@@ -19,5 +19,6 @@ public class HealthCheckService {
 			bodyType = "肥満体型";
 		}
 		health.setBodyType(bodyType);
+
 	}
 }
