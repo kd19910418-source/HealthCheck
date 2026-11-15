@@ -1,36 +1,59 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" th:href="@{/css/style.css}">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" th:href="@{/css/style.css}" />
     <title>健康診断アプリ</title>
-</head>
-<body>
+  </head>
+  <body>
     <header>
-        <h1>健康診断アプリ</h1>
+      <h1>健康診断アプリ</h1>
     </header>
 
     <div id="main_container">
-        <main>
-            <h2>健康診断の結果</h2>
+      <main>
+        <h2>健康診断の結果</h2>
+        <p>あなたの健康状態を確認しましょう。</p>
 
-            <div class="container">
-                <p>身長：<span th:text="${health.height}"></span><br></p>
+        <div class="container result-container">
+          <div class="result-item">
+            <span class="result-label">身長</span>
+            <span class="result-value">
+              <span th:text="${health.height}"></span>
+              <small>cm</small>
+            </span>
+          </div>
 
-                <p>体重：<span th:text="${health.weight}"></span><br></p>
+          <div class="result-item">
+            <span class="result-label">体重</span>
+            <span class="result-value">
+              <span th:text="${health.weight}"></span>
+              <small>kg</small>
+            </span>
+          </div>
 
-                <p>BMI：
-                    <span th:text="${#numbers.formatDecimal(health.bmi, 1, 2)}"></span>
-                    <br>
-                </p>
+          <div class="bmi-result">
+            <span class="result-label">あなたのBMI</span>
+            <strong
+              th:text="${#numbers.formatDecimal(health.bmi, 1, 2)}"
+            ></strong>
+          </div>
 
-                <p>体格：<span th:text="${health.bodyType}"></span></p>
-            </div>
-        </main>
+          <div class="body-type">
+            <span class="result-label">診断結果</span>
+            <strong th:text="${health.bodyType}"></strong>
+          </div>
+
+          <div class="result-button">
+            <a th:href="@{/HealthCheck}">もう一度診断する</a>
+          </div>
+        </div>
+      </main>
     </div>
 
     <footer>
-        <div><a th:href="@{/HealthCheck}">トップページ</a></div>
+      <div><a th:href="@{/HealthCheck}">トップページ</a></div>
     </footer>
-</body>
+  </body>
 </html>
